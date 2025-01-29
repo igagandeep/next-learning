@@ -1,14 +1,25 @@
 import React from "react";
+import Link from "next/link";
 
-function Products() {
+const Products = () => {
+  const productId = 883;
   return (
-    <>
-      <h1>Product List</h1>
-      <h2>Prodcut 1</h2>
-      <h2>Product 2</h2>
-      <h2>Product 3</h2>
-    </>
+    <div>
+      <Link href="/">Home</Link>
+
+      <h1>Product list</h1>
+
+      <h2>
+        <Link href={`/products/1`} replace>
+          Product 1
+        </Link>
+      </h2>
+
+      <h2>
+        <Link href={`/products/${productId}`}>Product {productId}</Link>
+      </h2>
+    </div>
   );
-}
+};
 
 export default Products;
